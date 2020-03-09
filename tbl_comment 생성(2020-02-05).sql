@@ -1,0 +1,14 @@
+ USE emsdb;
+ 
+ CREATE TABLE tbl_comment(
+	CMT_ID	BIGINT	NOT NULL	PRIMARY KEY auto_increment,
+	CMT_P_ID	BIGINT	NOT NULL DEFAULT 0,	
+	CMT_WRITER	VARCHAR(20)	NOT NULL,	
+	CMT_DATE DATETIME DEFAULT CURRENT_TIMESTAMP,
+	CMT_TEXT	VARCHAR(400)		 
+ );
+ 
+ drop table tbl_comment;
+ COMMIT;
+ 
+ select * from tbl_comment;
