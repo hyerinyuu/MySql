@@ -1,4 +1,4 @@
-use emsdb;
+use emstbl_carttbl_cartusersdb;
 
 INSERT INTO users(username, password, enabled)
 VALUES('admin', '{noop}admin', true);
@@ -29,6 +29,7 @@ delete from authorities WHERE seq = 2;
 desc authorities;
 select * from authorities;
 SELECT * FROM users;
+SELECT * FROM tbl_dept;
 desc tbl_product;
 desc tbl_dept;
 
@@ -36,3 +37,5 @@ desc tbl_dept;
 select * from tbl_product;
 
 commit;
+use emsdb;
+desc tbl_boards;
