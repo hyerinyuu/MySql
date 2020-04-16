@@ -10,6 +10,10 @@ grant all privileges on *.* to 'secur'@'localhost';
 -- SCHEMA OPEN
 USE SECUR;
 
+-- 2020-04-14 table을 spring server단에서 create해주려고 drop함
+drop table tbl_users;
+drop table authorities;
+
 -- USERS TABLE 생성
 create table users(
 	id bigint PRIMARY KEY auto_increment,
@@ -26,9 +30,15 @@ create table tbl_users(
     enabled boolean
 );
 
-
+-- 로그인한 User의 권한들을 보관할 Table
 create table authorities(
 	id bigint primary key auto_increment,
     username varchar(50),
     authority varchar(50)
 );
+
+INSERT INTO tbl_users(user_name, user_pass, enabled, email, phone, address)
+VALUES('admin', 'admin', true, 'hyerin.you@gmail.com', '010-2296-3030', '광주광역시 북구');
+
+SELECT * FROM tbl_users;
+commit;
